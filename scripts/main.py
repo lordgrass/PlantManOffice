@@ -9,7 +9,7 @@ File Purpose: Office Demo Program
 class DependencyChecker:
     def pModuleChecker():
         print('Looking for required modules')
-        import_module_list = ["time", "os", "tkinter", "datetime"]
+        import_module_list = ["time", "os", "tkinter", "datetime", "time"]
         modules = []
         for x in import_module_list:
             try:
@@ -63,9 +63,16 @@ class ConfHandler:
                     continue
 #Main window constructor:
 class LaunchHandler:
+    def pLauncherWindow():
+        Launcher = Tk()
+        Launcher.geometry("400x400")
+        Launcher.title("PlantManOffice Demo Launcher")
+        time.sleep(5)
+        Launcher.destroy()
+        
     def pMainWindow():
         root = Tk()
-        root.title("Office Demo")
+        root.title("PlantManOffice Demo")
         label = Label(root, text ="Welcome to PlantManOffice Word processor demo!")
         menubar = Menu(root)
         file = Menu(menubar, tearoff = 0)

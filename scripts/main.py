@@ -61,8 +61,6 @@ class ConfHandler:
                 else:
                     print("Please enter Y or N, you enetered: ", pLogging)
                     continue
-
-ConfHandler.pConfGenerator()
 #Main window constructor:
 class LaunchHandler:
     def pMainWindow():
@@ -77,5 +75,3 @@ class LaunchHandler:
         file.add_command(label ='Save', command = None)
         root.config(menu = menubar)
         root.mainloop()
-
-LaunchHandler.pMainWindow()

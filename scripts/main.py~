@@ -63,12 +63,9 @@ class ConfHandler:
                     continue
 #Main window constructor:
 class LaunchHandler:
-    def pUpdateHistoryWindow():
+    def pLauncherWindow():
         Launcher = Tk()
-        Launcher.geometry("800x800")
-        scroll_bar = Scrollbar(Launcher)
-        scroll_bar.pack( side = RIGHT, fill = Y )
-        Launcher.title("PlantManOffice Update History:")
-        with open("updates.txt", "r") as pUpdateList:
-            Label(Launcher, text=pUpdateList.read()).pack()
-        Launcher.mainloop()
+        Launcher.geometry("400x400")
+        Launcher.title("PlantManOffice Demo Launcher")
+        time.sleep(5)
+        Launcher.destroy()

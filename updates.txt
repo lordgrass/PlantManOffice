@@ -1,0 +1,2 @@
+V. 0.0.1 -> Welcome to PlantManOffice,
+The only feature currently implemented is the notetaking app. Official Build No. #00001

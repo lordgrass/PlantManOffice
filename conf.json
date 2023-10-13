@@ -1,5 +1,7 @@
 {
     "Conf Reset Switch": 0,
     "Logging Switch": 0,
-    "Disable Update Notes on Startup": 0
+    "Disable Update Notes on Startup": 0,
+    "Disable Automatic Program Updates": 1,
+    "Window Size": 3
 }

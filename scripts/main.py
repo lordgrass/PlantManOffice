@@ -19,7 +19,7 @@ class DependencyChecker:
                 print("Error, you are missing the following dependencies:", x)
 
 import os
-import time
+#import time
 from tkinter import *
 from tkinter.ttk import *
 #import datetime
@@ -67,8 +67,16 @@ class LaunchHandler:
         Launcher = Tk()
         Launcher.geometry("800x800")
         scroll_bar = Scrollbar(Launcher)
-        scroll_bar.pack( side = RIGHT, fill = Y )
-        Launcher.title("PlantManOffice Update History:")
+        scroll_bar.pack(side=RIGHT, fill=Y)
+        Launcher.title("PlantMan Office Update History:")
         with open("updates.txt", "r") as pUpdateList:
             Label(Launcher, text=pUpdateList.read()).pack()
         Launcher.mainloop()
+
+    def pSoftwarePicker():
+        pStarter = Tk()
+        pStarter.geometry("1920x1080")
+        scroll_bar = Scrollbar(pStarter)
+        scroll_bar.pack(side=RIGHT, fill=Y)
+        pStarter.title("PlantMan Office app selector")
+        pStarter.mainloop()

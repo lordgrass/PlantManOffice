@@ -1,2 +1,4 @@
 V. 0.0.1 -> Welcome to PlantManOffice,
-The only feature currently implemented is the notetaking app. Official Build No. #00001
+The only feature currently implemented is the update notes pop-up. Official Build No. #00001 Thu, Oct 12 2023
+Added several screen resolution options. Official Build No. #00002 Thu, Oct 12 2023 Unfinished
+Added required code to automatically generate the config file using JSON. Official Build No. #00003 Oct 13 2023

@@ -52,17 +52,11 @@ class LaunchHandler:
         file_menu.add_command(label="Update Conf", command=ConfHandler.pConfGenerator) #To be removed in V. 1.0.0
         file_menu.add_command(label="Exit", command=Launcher.destroy)
         menubar.add_cascade(label="File", menu=file_menu)
-        Launcher.frame(master=Launcher, width=120, height=1080, bg="gray").pack(fill=Y, side=LEFT) #Line needs debugging
-        ttk.Button(Launcher, text="Notes", command=None).pack(side=LEFT)
+        pFrame = Frame(Launcher, height=90, width=120, bg="Gray")
+        ttk.Button(pFrame, text="Notes", command=None).pack()
+        pFrame.pack()
         Launcher.mainloop()
-"""
-    def SoftwarePicker(): #Combined into the config window, left for refference.
-        pStarter = Tk()
-        pStarter.title("PlantMan Office app Selector")
-        pStarter.geometry("800x800")
-        ttk.Button(pStarter, text="Notes", command=None).pack()
-        pStarter.mainloop()
-"""
+
 class ConfHandler:
     def pConfGenerator(): #Should only activate when the Reset Switch is set to 1 or on first run of the program.
         pDefaultConf = {
@@ -70,7 +64,7 @@ class ConfHandler:
             "Logging Switch": 0,
             "Disable Update Notes on Startup": 0,
             "Disable Automatic Program Updates": 1,
-            "Window Size": 3 #See the graphics handler class lower in this file.
+            "Window Size": 3
         }
         with open("conf.json", "w", encoding="utf-8") as pWriteToFile:
             json.dump(pDefaultConf, pWriteToFile, ensure_ascii=False, indent=4)

@@ -9,5 +9,6 @@ Official Build No. #00002 Thu, Oct 12 2023 Unfinished
 Added required code to automatically generate the config file using JSON.
 Official Build No. #00003 Thu, Oct 13 2023
 
-Partially finished the launcher applet, it is now possible to update the config and exit the program using the file menu.
+Partially finished the launcher applet, it is now possible to update the 
+config and exit the program using the file menu.
 Official Build No. #00004 Thu, Oct 13 2023

@@ -12,3 +12,6 @@ Official Build No. #00003 Thu, Oct 13 2023
 Partially finished the launcher applet, it is now possible to update the 
 config and exit the program using the file menu.
 Official Build No. #00004 Thu, Oct 13 2023
+
+Partially implemented the notepad app. Saving notes is not possible yet.
+Official Build No. #00005 Monday Feb 26 2024

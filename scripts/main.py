@@ -4,6 +4,7 @@ Date: 10/11/2023
 Program V. 0.0.1
 File V. 0.0.1
 File Purpose: PlantMan Office, prototype.
+Build Number: See updates.txt or launch the app by running cli.py
 """
 
 class DependencyChecker:
@@ -52,8 +53,8 @@ class LaunchHandler:
         file_menu.add_command(label="Update Conf", command=ConfHandler.pConfGenerator) #To be removed in V. 1.0.0
         file_menu.add_command(label="Exit", command=Launcher.destroy)
         menubar.add_cascade(label="File", menu=file_menu)
-        pFrame = Frame(Launcher, height=90, width=120, bg="Gray")
-        ttk.Button(pFrame, text="Notes", command=None).pack()
+        pFrame = Frame(Launcher, height=90, width=120)
+        ttk.Button(pFrame, text="Notes", command=NoteAppHandler.pNotesWindow).pack()
         pFrame.pack()
         Launcher.mainloop()
 
@@ -76,3 +77,24 @@ class ConfHandler:
             "1920x1080": 3, #default
             "1280x720": 4
         }
+
+class NoteAppHandler:
+    def pNotesWindow():
+        nWindow = Tk()
+        nWindow.title("Plant Man Notes:")
+        nWindow.geometry("1280x720")
+        nMenuBar = Menu(nWindow)
+        nWindow.config(menu=nMenuBar)
+        file_menu = Menu(nMenuBar, tearoff=False)
+        file_menu.add_command(label="Exit", command=nWindow.destroy)
+        nMenuBar.add_cascade(label="File", menu=file_menu)
+        texInput = Text(nWindow, width=1240, height=720)
+        texInput.pack()
+        nWindow.mainloop()
+
+class PMOFiles:
+    def pFileManager():
+        nSelector = Tk()
+        nSelector.geometry("1240x720")
+        nSelector.title("Plant Man Office File Manager")
+        nSelector.mainloop()

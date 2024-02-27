@@ -4,7 +4,7 @@ Date: 10/11/2023
 Program V. 0.0.1
 File V. 0.0.1
 File Purpose: PlantMan Office, prototype.
-Build Number: See updates.txt or launch the app by running cli.py
+Build Number: See updates.txt or launch the app by running launcher.bat
 """
 
 class DependencyChecker:
@@ -59,24 +59,32 @@ class LaunchHandler:
         Launcher.mainloop()
 
 class ConfHandler:
+    """
+    def pConfLoader():
+        with open("conf.json", "r", encoding="utf-8") as fileConfPath:
+            confData = json.load(fileConfPath)
+            Reset = confData["ConfResetSwitch"]
+            Logging = confData["LoggingSwitch"]
+            DisableUpdateNotes = confData["DisableUpdateNotesOnStartup"]
+            DisableAutoUpdates = confData["DisableAutomaticProgramUpdates"]
+            WindowSize = confData["WindowSize"]
+
+    def pConfError():
+        eBox = Tk()
+        eBox.title("Conf Error")
+        eBox.label(eBox, Text="Error in configuration file, please read documentation.").pack()
+        eBox.mainloop()
+    """
     def pConfGenerator(): #Should only activate when the Reset Switch is set to 1 or on first run of the program.
         pDefaultConf = {
-            "Conf Reset Switch": 0,
-            "Logging Switch": 0,
-            "Disable Update Notes on Startup": 0,
-            "Disable Automatic Program Updates": 1,
-            "Window Size": 3
+            "ConfResetSwitch": 0,
+            "LoggingSwitch": 0,
+            "DisableUpdateNotesOnStartup": 0,
+            "DisableAutomaticProgramUpdates": 1,
+            "WindowSize": 3
         }
         with open("conf.json", "w", encoding="utf-8") as pWriteToFile:
             json.dump(pDefaultConf, pWriteToFile, ensure_ascii=False, indent=4)
-
-    def pActivateRes(): #Not implemented.
-        switch={
-            "3840x2160": 1,
-            "2560x1440": 2,
-            "1920x1080": 3, #default
-            "1280x720": 4
-        }
 
 class NoteAppHandler:
     def pNotesWindow():

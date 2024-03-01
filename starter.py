@@ -4,14 +4,15 @@ Program Version: RW 0.0.1
 Build Number: RW #00001
 File Build Number: #00001
 """
-
+import os
+import importlib.util
 from tkinter import *
 from tkinter import ttk
 
 class Dependency_Checker:
     def aModuleChecker():
         print('Looking for required modules')
-        import_module_list = ["os", "json","tkinter"]
+        import_module_list = ["tkinter"]
         modules = []
         for x in import_module_list:
             try:
@@ -46,6 +47,35 @@ class Program_Launcher:
         file_menu.add_command(label="Exit", command=mainWindow.destroy)
         MenuBar.add_cascade(label="File", menu=file_menu)
         mainWindow.geometry("800x800")
+
+        @staticmethod
+        def import_addon_files(addon_path):
+            imported_addons = {}
+            file_list = os.listdir(addon_path)
+            addon_files = [f for f in file_list if f.lower().endswith(".py")]
+            for file_name in addon_files:
+                module_name = os.path.splitext(file_name)[0]
+                file_path = os.path.join(addon_path, file_name)
+                try:
+                    spec = importlib.util.spec_from_file_location(module_name, file_path)
+                    module = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(module)
+                    imported_addons[module_name] = module
+                except Exception as e:
+                    print(f"Error importing {module_name}: {e}")
+            return imported_addons
+
+        directory_path = "modules/" #Will be added to a json conf at some point
+        imported_addons = import_addon_files(directory_path)
+
+        print("Loaded Addons:")
+
+        for module_name in imported_addons:
+            print(module_name)
+
+        #Buttons for included applications:
+        NoteButton = ttk.Button(mainWindow, text="Notes", command=None)
+        NoteButton.pack()
         mainWindow.mainloop()
 
 Program_Launcher.bMainWindow()

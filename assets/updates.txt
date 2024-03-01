@@ -15,3 +15,10 @@ Official Build No. #00004 Thu, Oct 13 2023
 
 Partially implemented the notepad app. Saving notes is not possible yet.
 Official Build No. #00005 Monday Feb 26 2024
+
+V. 0.0.1 rewrite -> Due to certain goals, I have started over. At the very least
+on the launcher.
+
+Build RW #00001 | Friday March 1st 2024 ->
+- Code from partially completed notepad app is now in its own file.
+- Updates.txt can now be found in the assets folder.
